@@ -56,7 +56,7 @@ var app = {
 
     },
     onOffLine: function(){
-               navigator.notification.alert('Make sure that you are connected to Wi-Fi or cellular/roaming data is turned on.');
+               //navigator.notification.alert('Make sure that you are connected to Wi-Fi or cellular/roaming data is turned on.');
      },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
