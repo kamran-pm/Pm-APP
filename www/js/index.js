@@ -27,8 +27,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        //document.addEventListener('offline', this.onOffLine, false);
-        //document.addEventListener('online', this.onOnline, false);
+        document.addEventListener('offline', this.onOffLine, false);
+        document.addEventListener('online', this.onOnline, false);
     },
     // deviceready Event Handler
     //
@@ -39,7 +39,7 @@ var app = {
          //var url = "https://www.propertymonitor.ae/v2/mobile-pm/login.php"
          //window.open(url)
     if (navigator.connection.type == Connection.NONE) {
-      navigator.notification.alert('An internet connection is required to continue');
+      navigator.notification.alert('Make sure that you are connected to Wi-Fi or cellular/roaming data is turned on.');
     } else {
       window.location="https://www.propertymonitor.ae/v2/mobile-pm/login.php";
     }
@@ -56,12 +56,7 @@ var app = {
 
     },
     onOffLine: function(){
-              navigator.notification.alert(
-                  'Make sure that you are connected to Wi-Fi or cellular/roaming data is turned on.',  // message
-                  function(){ navigator.app.exitApp();},         // callback
-                  'No Internet connection',            // title
-                  'Ok'                  // buttonName
-              );
+               navigator.notification.alert('Make sure that you are connected to Wi-Fi or cellular/roaming data is turned on.');
      },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
